@@ -20,4 +20,7 @@ jobs:
       run: npm install
 
     - name: Build app
-      run : npm run build
+      run: npm run build
+
+    - name: Test app
+      run: npm test
