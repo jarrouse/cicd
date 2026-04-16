@@ -8,6 +8,7 @@ on:
         required: true
         default: false
         type: boolean
+  pull_request:
         
 jobs:
   install:
@@ -29,5 +30,5 @@ jobs:
       run: npm run build
   
     - name: Test app
-      if: ${{ inputs.runTests }}
+      if: ${{ inputs.runTests || github.event.pull_request}}
       run: npm test
